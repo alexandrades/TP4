@@ -93,7 +93,7 @@ void bmhs(int m, int n, char* txt, char*p){
   int i, k, j;
   int *pulo = (int*) malloc(sizeof(int) * 256);//ALOCA UM VETOR PARA GUARDAR OS VALORES DOS PULOS PARA CADA CARACTER DA TABELA ASCII
   //PREENCHE TODAS AS POSIÇOES DO VETOR COM O TAMANHO DO PADRAO A SER PROCURADO MAIS 1
-  for(int j = 0; j < 127; j++){
+  for(int j = 0; j < 256; j++){
 
     pulo[j] = m + 1;
   }

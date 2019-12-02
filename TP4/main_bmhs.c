@@ -21,4 +21,5 @@ void main(){
   }
 
   bmhs(tam_p, strlen(txt), txt, p);
+  
 }

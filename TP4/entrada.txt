@@ -1,1 +1,1 @@
-os testes testam os testes
+Algoritmos de processamento de caracteres Shift-And, boyer-moore
