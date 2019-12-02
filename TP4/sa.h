@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-int** tab_mascara(char* p, int tam);
-void sa_or(int* r, int* rl, int tam, int** ascii);
-void shift_or(int *r, int *rl, int tam);
+void le_arquivo(FILE* arq, char* texto);
+int shiftand (const char *p, const char *t);
 void bmh(int m, int n, char* txt, char* p);
+void bmhs(int m, int n, char* txt, char*p);

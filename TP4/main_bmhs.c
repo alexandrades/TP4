@@ -20,5 +20,5 @@ void main(){
   	txt[i] = c;
   }
 
-  bmh(tam_p, strlen(txt), txt, p);
+  bmhs(tam_p, strlen(txt), txt, p);
 }

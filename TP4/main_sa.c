@@ -1,17 +1,24 @@
 #include "sa.h"
 
-void main(){
+void main() {
 
-  char p[6] = "teste";
+	FILE *arq = fopen("entrada.txt", "r");
 
-  int tam_p = strlen(p);
-  //CRIA TABELA DE MASCARAS PARA TODOS OS CARECTERES DA TABELA ASCII
-  int** ascii =(int**) tab_mascara(p, tam_p);
+	char* texto = (char*) malloc(1000*sizeof(char));
 
-  //CRIA VETORES PARA R E R'
-  int *r = (int*) calloc(tam_p, sizeof(int));
-  int *rl = (int*) calloc(tam_p, sizeof(int));
+	le_arquivo (arq, texto);
 
-  sa_or(r, rl, tam_p, ascii);
+	char *p = (char*) malloc(sizeof(char) * 100);
+  	printf("Insira o padrao a ser procurado no texto(tamanho max = 100):\n");
+  	scanf("%s", p);
+
+	int r = shiftand(p, texto); //chama a funcao shiftand passando o padrao e o texto e retorna r
+
+	free(p);
+	free(texto);
+
+	if (r == -1){ // se o valor retornado for -1 nao possui o padrao no texto
+  		printf("Nao possui no padrao\n");
+	}
 
 }
