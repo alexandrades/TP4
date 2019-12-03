@@ -6,7 +6,7 @@ void main(){
   printf("Insira o padrao a ser procurado no texto(tamanho max = 100):\n");
   scanf("%s", p);
 
-  char *txt = (char*) malloc(sizeof(char)*5000);
+  char *txt = (char*) malloc(sizeof(char)*5001);
   char c;
   int tam_p = strlen(p);
 
