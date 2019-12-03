@@ -89,21 +89,23 @@ void bmh(int m, int n, char* txt, char* p){
   free(pulo);
 }
 
-void bmhs(int m, int n, char* txt, char*p){
-  int i, k, j;
-  int *pulo = (int*) malloc(sizeof(int) * 256);//ALOCA UM VETOR PARA GUARDAR OS VALORES DOS PULOS PARA CADA CARACTER DA TABELA ASCII
-  //PREENCHE TODAS AS POSIÇOES DO VETOR COM O TAMANHO DO PADRAO A SER PROCURADO MAIS 1
+void bmhs(int m, int n, char* txt, char* p){
+
+  int i, k, j; 
+  int *pulo = (int*) malloc(sizeof(int)*256); //ALOCA UM VETOR PARA GUARDAR OS VALORES DOS PULOS PARA CADA CARACTER DA TABELA ASCII
+  //PREENCHE TODAS AS POSIÇOES DO VETOR COM O TAMANHO DO PADRAO A SER PROCURADO
   for(int j = 0; j < 256; j++){
 
-    pulo[j] = m + 1;
+    pulo[j] = m;
   }
   //PREENCHE TODAS AS POSIÇOES DO VETOR QUE POSSUEM OCORRENCIA NO PADRAO, ATUALIZANDO O VALOR DO PULO
   for(int j = 0; j <= m-1; j++){
     
-    pulo[p[j]] = m + 2 - j;
+    pulo[p[j]] = m - j;
   }
 
   i = m-1;
+
   //WHILE É EXECUTADO ENQUANTO O FIM DO ARQUIVO NÃO FOR ALCANÇADO
   while(i <= n){
     
@@ -118,8 +120,8 @@ void bmhs(int m, int n, char* txt, char*p){
     if(j < 0){
       printf("Casamento na posicao: %d\n", k+1);
     }
-    //REALIZA O PULO DO PADRAO EM RELAÇAO AO TEXTO
-    i += pulo[txt[i]];
+    //REALIZA O PULO DO PADRÃO EM RELAÇÃO AO TEXTO
+    i += pulo[txt[i+1]];
   }
   free(pulo);
 }
