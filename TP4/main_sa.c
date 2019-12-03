@@ -4,7 +4,7 @@ void main() {
 
 	FILE *arq = fopen("entrada.txt", "r");
 
-	char* texto = (char*) malloc(1000*sizeof(char));
+	char* texto = (char*) malloc(5001*sizeof(char));
 
 	le_arquivo (arq, texto);
 
